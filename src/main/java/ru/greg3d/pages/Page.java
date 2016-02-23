@@ -4,6 +4,8 @@ import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import ru.greg3d.controls.AnyControl;
+import ru.greg3d.controls.AnyLocatorCorrector;
 import ru.greg3d.factory.fielddecorator.model.LocatorCorrector;
 import ru.greg3d.util.Fields;
 import ru.greg3d.util.WaitUtils;
@@ -13,7 +15,7 @@ import ru.greg3d.util.WaitUtils;
  * 
  * @author Sebastiano Armeli-Battana
  */
-public abstract class Page {
+public abstract class Page extends AnyLocatorCorrector{
 
 	protected String url = "/";
 	protected WebDriver driver;
@@ -21,7 +23,6 @@ public abstract class Page {
 	protected PageManager pages;
 
 	protected LocatorCorrector corrector;
-	protected final String _ID = "#ID#";
 	
 	/*
 	 * Constructor injecting the WebDriver interface
@@ -35,7 +36,7 @@ public abstract class Page {
 		corrector = new LocatorCorrector(); 
 	}
 
-	protected LocatorCorrector getLocatorCorrector(){
+	public LocatorCorrector getLocatorCorrector(){
 		return corrector;
 	}
 	

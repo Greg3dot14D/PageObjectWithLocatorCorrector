@@ -13,6 +13,8 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
+import ru.greg3d.controls.Buttons;
+import ru.greg3d.controls.HomeButtons;
 import ru.greg3d.factory.fielddecorator.model.LocatorCorrector;
 import ru.greg3d.util.WaitUtils;
 
@@ -39,16 +41,21 @@ public class HomePage extends DefaultPage {
 
 	// кнопка Добавить фильм
 	//@FindBy(css = "img[title='Add movie']")
-	@FindBy(css = "img[title='"+ _ID +"']")
-	private WebElement imgAddMovie;
+	//@FindBy(css = "img[title='"+ _ID +"']")
+	//private WebElement imgAddMovie;
 
+	//public Buttons buttons;
+	public HomeButtons buttons;
+	
 	@FindBy(id="results")
 	WebElement results;
 	
 	public HomePage(PageManager page) {
 		super(page);
-		corrector.setWhat(_ID).setThan(_THAN_ID);
+		corrector.setWhat(_WHAT_ID).setThan(_THAN_ID);
+		buttons = new Buttons(page.getWebDriver(), corrector);
 	}
+
 
 	public HomePage ensurePageLoaded() {
 		super.ensurePageLoaded();
@@ -101,7 +108,8 @@ public class HomePage extends DefaultPage {
 	
 	// нажимаем на кнопку Добавить фильм
 	public HomePage imgAddMovieClick(){
-		imgAddMovie.click();
+		buttons.getImgAddMovie().click();
+		//imgAddMovie.click();
 		return this;
 	}
 }
