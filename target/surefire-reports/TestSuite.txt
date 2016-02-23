@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 21.741 sec <<< FAILURE! - in TestSuite
+testSearchValidRecord(ru.greg3d.Lesson3TestDeleteSearch)  Time elapsed: 0.56 sec  <<< FAILURE!
+java.lang.AssertionError: searched list is empty, searchArg -'new'
+	at ru.greg3d.Lesson3TestDeleteSearch.testSearchValidRecord(Lesson3TestDeleteSearch.java:56)
+

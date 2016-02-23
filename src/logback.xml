@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+	  
+<configuration>
+
+	<appender name="DB" class="ch.qos.logback.classic.db.DBAppender">
+		<connectionSource	class="ch.qos.logback.core.db.DataSourceConnectionSource">
+			<dataSource class="com.mysql.jdbc.jdbc2.optional.MysqlDataSource">
+				<serverName>localhost</serverName>
+				<port>3306</port>
+				<databaseName>php4dvdLogBase</databaseName>
+				<user>root</user>
+				<password></password>
+			</dataSource>
+		</connectionSource>
+	</appender>
+	
+	<!-- Это для лога при использовании Grid-а, фильтруем вывод из броузера по INFO -->
+	<!--logger name="org.apache.http" level="INFO"/-->
+	<root level="debug">
+		<appender-ref ref="DB" />
+	</root>
+
+</configuration>

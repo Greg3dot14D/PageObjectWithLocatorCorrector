@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="2" guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [Tests]" parallel="tests">
+  <parameter name="path" value="/"/>
+  <parameter name="user" value="admin"/>
+  <parameter name="password" value="admin"/>
+  <test verbose="2" name="TestAdd">
+    <parameter name="path" value="/"/>
+    <parameter name="password" value="admin"/>
+    <parameter name="user" value="admin"/>
+    <classes>
+      <class name="ru.greg3d.Lesson3TestAdd"/>
+    </classes>
+  </test> <!-- TestAdd -->
+  <test verbose="2" name="TestDeleteSearch">
+    <parameter name="path" value="/"/>
+    <parameter name="password" value="admin"/>
+    <parameter name="user" value="admin"/>
+    <classes>
+      <class name="ru.greg3d.Lesson3TestDeleteSearch"/>
+    </classes>
+  </test> <!-- TestDeleteSearch -->
+  <test name="TestDeleteSearch(failed)" parallel="tests">
+    <parameter name="path" value="/"/>
+    <parameter name="password" value="admin"/>
+    <parameter name="user" value="admin"/>
+    <classes>
+      <class name="ru.greg3d.Lesson3TestAdd">
+        <methods>
+          <include name="tearDown"/>
+          <include name="doGotoHome"/>
+          <include name="SuiteSetup"/>
+          <include name="DoLogin"/>
+        </methods>
+      </class> <!-- ru.greg3d.Lesson3TestAdd -->
+      <class name="ru.greg3d.Lesson3TestDeleteSearch">
+        <methods>
+          <include name="testSearchValidRecord"/>
+          <include name="doGotoHome"/>
+          <include name="tearDown"/>
+          <include name="SuiteSetup"/>
+          <include name="DoLogin"/>
+        </methods>
+      </class> <!-- ru.greg3d.Lesson3TestDeleteSearch -->
+    </classes>
+  </test> <!-- TestDeleteSearch(failed) -->
+</suite> <!-- Failed suite [Tests] -->

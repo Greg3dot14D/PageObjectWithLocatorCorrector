@@ -1,2 +1,1 @@
-# PageObjectWithLocatorCorrector
-PageObjectWithLocatorCorrector
+# JavaWebDriverTrainingLesson3
