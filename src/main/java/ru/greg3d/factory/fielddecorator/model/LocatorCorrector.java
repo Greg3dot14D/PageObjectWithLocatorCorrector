@@ -15,8 +15,13 @@ public class LocatorCorrector {
 	}
 	
 	public String getCorrectedValue(String text){
-		if (whatReplace.equals(null) || thanReplace.equals(null))
+		if (whatReplace.equals("") && thanReplace.equals(""))
 			return text;
+		if(whatReplace.equals("") && !thanReplace.equals("")){
+			throw new IllegalArgumentException(("whatReplace value is empty"));
+		}
 		return text.replace(whatReplace, thanReplace);
 	}
+	
+
 }

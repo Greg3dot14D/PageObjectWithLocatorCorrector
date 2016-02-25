@@ -1,16 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+	  
 <configuration>
 
-  <appender name="FILE" class="ch.qos.logback.core.FileAppender">
-    <file>logFile.log</file>
-    <append>true</append>
-    <!-- encoders are assigned the type
-         ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
-    <encoder>
-      <pattern>%-4relative [%thread] %-5level %logger{35} - %msg%n</pattern>
-    </encoder>
+  <appender name="DB" class="ch.qos.logback.classic.db.DBAppender">
+    <connectionSource class="ch.qos.logback.core.db.DriverManagerConnectionSource">
+      <driverClass>com.microsoft.sqlserver.jdbc.SQLServerDriver</driverClass>
+      <url>jdbc:sqlserver://WKS-CST-19\SQLEXPRESS:1441;databaseName=loger</url>
+      <user>trim</user>
+      <password></password>
+    </connectionSource>
   </appender>
-        
-  <root level="DEBUG">
-    <appender-ref ref="FILE" />
-  </root>
+    
+	<root level="debug">
+		<appender-ref ref="DB" />
+	</root>
+
 </configuration>

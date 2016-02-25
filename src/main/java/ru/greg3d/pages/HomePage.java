@@ -52,7 +52,7 @@ public class HomePage extends DefaultPage {
 	
 	public HomePage(PageManager page) {
 		super(page);
-		corrector.setWhat(_WHAT_ID).setThan(_THAN_ID);
+		corrector.setThan(_THAN_ID);
 		buttons = new Buttons(page.getWebDriver(), corrector);
 	}
 
@@ -108,7 +108,7 @@ public class HomePage extends DefaultPage {
 	
 	// нажимаем на кнопку Добавить фильм
 	public HomePage imgAddMovieClick(){
-		buttons.getImgAddMovie().click();
+		buttons.ImgAddMovieClick();
 		//imgAddMovie.click();
 		return this;
 	}

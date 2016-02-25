@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+﻿<?xml version="1.0" encoding="UTF-8" ?>
 	  
 <configuration>
 
@@ -13,7 +13,10 @@
 			</dataSource>
 		</connectionSource>
 	</appender>
-    
+	
+	<!-- Это для лога при использовании Grid-а, фильтруем вывод из броузера по INFO -->
+	<!--logger name="org.apache.http" level="INFO"/-->
+	<logger name="org.apache.http" level="INFO"/>
 	<root level="debug">
 		<appender-ref ref="DB" />
 	</root>

@@ -44,6 +44,7 @@ public class NavigationHelper1 extends DriverBasedHelper implements NavigationHe
 	@Override
 	public void gotoAddNewFilmPage() {
 		if (!pages.addFilmPage.pageIsOpen())
-			pages.homePage.imgAddMovieClick();
+			//pages.homePage.imgAddMovieClick();
+			pages.homePage.buttons.ImgAddMovieClick();
 	}
 }

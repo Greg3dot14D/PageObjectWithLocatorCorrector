@@ -12,6 +12,8 @@ import org.testng.annotations.Listeners;
 import ru.greg3d.applogic.implementations.*;
 import ru.greg3d.applogic.interfaces.*;
 
+import com.microsoft.sqlserver.jdbc.*;
+
 @Listeners({TestBase.LogListener.class})
 public class TestBase {
 	
@@ -35,9 +37,8 @@ public class TestBase {
 
 		@Override
 		public void afterInvocation(IInvokedMethod m, ITestResult res) {
-			LOG.info("" + res.getEndMillis());
-			LOG.info("" + res.getStatus());
-			LOG.info("<<< @Test " + m.getTestMethod().getMethodName());
+//			LOG.info("<<< @Test " + m.getTestMethod().getMethodName());
+			LOG.info("<<< @Test [{}] delay: {} ms",m.getTestMethod().getMethodName(),(m.getTestResult().getEndMillis() - m.getTestResult().getStartMillis()));			
 		}
 
 		@Override

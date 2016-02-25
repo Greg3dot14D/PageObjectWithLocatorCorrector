@@ -25,6 +25,7 @@ public class Lesson3TestAdd extends doLogin {
 	// *
 	@Test
 	public void addValidRecord() {
+		Assert.ignore("test");
 		// Сохранили число записей до добавления фильма
 		int recordCount = app.getFilmHelper().getRecordCount();
 
@@ -54,6 +55,7 @@ public class Lesson3TestAdd extends doLogin {
 	// *
 	@Test(dataProvider = "inValidFieldsFilmsDataProvider")
 	public void addNotAllNecessaryFieldsRecord(final Film film) {
+		Assert.ignore("test");
 		app.getNavigationHelper().gotoAddNewFilmPage();
 		app.getFilmHelper().create(film);
 		Assert.assertTrue(app.getFilmHelper().filmWasNotAdded(),

@@ -1,11 +1,9 @@
 package ru.greg3d;
 
-import org.openqa.selenium.By;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 
 import ru.greg3d.asserts.Assert;
-import ru.greg3d.browsers.TracingWebDriver;
 import ru.greg3d.model.User;
 
 public class doLogin extends TestBase{

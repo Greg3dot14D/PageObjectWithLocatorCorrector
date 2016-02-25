@@ -22,14 +22,13 @@ public class Lesson3TestDeleteSearch extends doLogin {
 	//*
 	//* очищаем после каждого теста поле search
 	//*
-	//@AfterMethod()
-	private void clearFilter() {
-		app.getFilmHelper().clearFilter();
-	}
+//	@AfterMethod()
+//	private void clearFilter() {
+//		app.getFilmHelper().clearFilter();
+//	}
 	
 	@Test
 	public void testDelete() {
-		Assert.assertTrue(false);
 		// проверяем в начале теста, что в гриде есть записи
 		Assert.ignoreFalse(app.getFilmHelper().gridIsEmpty(),"grid is empty, test blocked");
 		// Сохранили значение фильма по индексу 0
@@ -43,7 +42,7 @@ public class Lesson3TestDeleteSearch extends doLogin {
 	//*
 	//* проверка поиска первой из списка записи
 	//*
-	//@Test
+	@Test
 	public void testSearchValidRecord() {
 		// блокируем тест, если грид пуст
 		Assert.ignoreFalse(app.getFilmHelper().gridIsEmpty(),"grid is empty, test blocked");
@@ -62,7 +61,7 @@ public class Lesson3TestDeleteSearch extends doLogin {
 	//*
 	//* проверка поиска записи, которой, скорее всего, нет в базе
 	//*
-	//@Test
+	@Test
 	public void testSearchNotValidRecord() {
 		// блокируем тест, если грид пуст
 		Assert.ignoreFalse(app.getFilmHelper().gridIsEmpty(),"grid is empty, test blocked");
