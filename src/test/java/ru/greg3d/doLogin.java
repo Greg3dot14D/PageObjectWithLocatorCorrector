@@ -5,6 +5,7 @@ import org.testng.annotations.Parameters;
 
 import ru.greg3d.asserts.Assert;
 import ru.greg3d.model.User;
+import ru.greg3d.util.WaitUtils;
 
 public class doLogin extends TestBase{
 	

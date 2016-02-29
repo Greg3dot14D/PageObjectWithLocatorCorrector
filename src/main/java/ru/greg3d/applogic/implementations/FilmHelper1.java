@@ -6,6 +6,7 @@ import java.util.List;
 import ru.greg3d.applogic.interfaces.FilmHelper;
 import ru.greg3d.asserts.Assert;
 import ru.greg3d.model.Film;
+import ru.greg3d.util.WaitUtils;
 
 public class FilmHelper1 extends DriverBasedHelper implements FilmHelper {
 
@@ -127,6 +128,7 @@ public class FilmHelper1 extends DriverBasedHelper implements FilmHelper {
 	
 	@Override
 	public boolean filmWasAdded() {
+		WaitUtils.delay(2000);
 		return pages.moviePage.waitPageLoaded();
 	}
 

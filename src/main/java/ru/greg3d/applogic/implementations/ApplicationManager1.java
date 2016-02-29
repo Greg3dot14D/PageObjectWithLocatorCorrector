@@ -21,9 +21,10 @@ public class ApplicationManager1 implements ApplicationManager {
 
 	public ApplicationManager1() {
 		this.baseUrl = PropertyLoader.loadProperty("site.url");
-		driver = new TracingWebDriver(BrowserDriver.getEventFiringWebDriver(BrowserDriver.newDriver()))
-				.getWrappedDriver();
-//		driver = new TracingWebDriver(BrowserDriver.getEventFiringWebDriver(BrowserDriver.newDriver()));		
+//		driver = new TracingWebDriver(BrowserDriver.getEventFiringWebDriver(BrowserDriver.newDriver()))
+//				.getWrappedDriver();
+		driver = new TracingWebDriver(BrowserDriver.getEventFiringWebDriver(BrowserDriver.newDriver()));
+//		driver = new TracingWebDriver(BrowserDriver.newDriver());
 		userHelper = new UserHelper1(this);
 		filmHelper = new FilmHelper1(this);
 		navHelper = new NavigationHelper1(this);

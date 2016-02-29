@@ -53,5 +53,14 @@ public class WaitUtils {
     		return false;
     	}
     	return true;
-    }		
+    }
+	
+	public static void delay(long millis){
+		try {
+			Thread.sleep(millis);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 }

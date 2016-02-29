@@ -21,6 +21,27 @@ public class BrowserFactory {
 				UnexpectedAlertBehaviour.IGNORE);
 		cap.setCapability(CapabilityType.HAS_NATIVE_EVENTS, false);
 
+		
+//		DesiredCapabilities capabilities = new DesiredCapabilities().android();
+//        capabilities.setCapability("no",true);
+//        capabilities.setCapability("newCommandTimeout", 100000);
+//        capabilities.setCapability("noReset", true);
+//        capabilities.setCapability(CapabilityType.BROWSER_NAME, "");
+//        capabilities.setCapability(CapabilityType.VERSION, "4.4.2");
+//        capabilities.setCapability("deviceName", "Galaxy nexus");
+//        capabilities.setCapability("app", application.getAbsolutePath());
+//        capabilities.setCapability("automationName", "selendroid");
+//        capabilities.setCapability("noRest", true);
+//        driver = new AndroidDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+		
+		cap.setCapability("deviceName", "JIAYU G4S");
+		cap.setCapability("platformName","Android");
+		cap.setCapability("platformVersion","4.2");
+		//cap.setCapability("automationName", "Selendroid");
+		cap.setCapability("automationName", "Appium");
+		//cap.setCapability("app", "Browser");
+		cap.setCapability("app", "Chrome");
+		
 		switch (PropertyLoader.loadProperty("browser.name")) {
 		// вставляем костыли, если они требуются в проекте
 		default:
@@ -40,7 +61,9 @@ public class BrowserFactory {
 		// Dimension dim = new Dimension((int) screenSize.getWidth(), (int)
 		// screenSize.getHeight());
 		// driver.manage().window().setSize(dim);
-		driver.manage().window().maximize();
+		
+		// maximize отключаем на андроиде
+		//driver.manage().window().maximize();
 	}
 
 	// Слизано у Баранцева, настроки считываются из файла

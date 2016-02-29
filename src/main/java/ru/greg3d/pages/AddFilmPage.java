@@ -34,6 +34,7 @@ public class AddFilmPage extends DefaultPage {
 	}
 	
 	public AddFilmPage titleInput(String text){
+		titleInput.click();
 		titleInput.sendKeys(text);
 		return this;
 	}
@@ -44,6 +45,7 @@ public class AddFilmPage extends DefaultPage {
 	}	
 	
 	public AddFilmPage yearInput(String text){
+		yearInput.click();
 		yearInput.sendKeys(text);
 		return this;
 	}
@@ -54,6 +56,7 @@ public class AddFilmPage extends DefaultPage {
 	}	
 	
 	public AddFilmPage ratingInput(String text){
+		ratingInput.click();
 		ratingInput.sendKeys(text);
 		return this;
 	}
@@ -64,6 +67,7 @@ public class AddFilmPage extends DefaultPage {
 	}
 	
 	public AddFilmPage durationInput(String text){
+		durationInput.click();
 		durationInput.sendKeys(text);
 		return this;
 	}

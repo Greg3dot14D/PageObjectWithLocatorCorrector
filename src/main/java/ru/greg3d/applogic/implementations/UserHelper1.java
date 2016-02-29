@@ -1,11 +1,13 @@
 package ru.greg3d.applogic.implementations;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.*;
 import ru.greg3d.applogic.interfaces.UserHelper;
 import ru.greg3d.model.User;
+import ru.greg3d.util.WaitUtils;
 
 public class UserHelper1 extends DriverBasedHelper implements UserHelper {
 
@@ -18,12 +20,17 @@ public class UserHelper1 extends DriverBasedHelper implements UserHelper {
 
   @Override
   public void loginAs(User user) {
-    driver.findElement(By.name("username"))
-      .sendKeys(user.getLogin());
-    driver.findElement(By.name("password"))
-      .sendKeys(user.getPassword());
-    driver.findElement(By.name("submit"))
-      .click();
+    WebElement e = driver.findElement(By.id("username"));
+    e.click();
+    e.sendKeys(user.getLogin());
+    e = driver.findElement(By.name("password"));
+    e.click();
+    e.sendKeys(user.getPassword());
+    e = driver.findElement(By.name("submit"));
+    e.click();
+    
+    WaitUtils.WaitPageIsNotActive(driver);
+    WaitUtils.WaitPageIsActive(driver);
   }
 
   @Override
