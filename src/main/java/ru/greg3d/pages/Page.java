@@ -3,6 +3,8 @@ package ru.greg3d.pages;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import ru.greg3d.factory.fielddecorator.model.LocatorCorrector;
 import ru.greg3d.util.Fields;
@@ -21,6 +23,8 @@ public abstract class Page{
 	protected PageManager pages;
 
 	protected LocatorCorrector corrector;
+	
+	protected Logger LOG = LoggerFactory.getLogger(Page.class);
 	
 	/*
 	 * Constructor injecting the WebDriver interface
@@ -51,6 +55,7 @@ public abstract class Page{
 	}
 	
 	public boolean pageIsOpen(){
+		LOG.debug("pageIsOpen, wiat '{}' was '{}'", this.getUrl(), driver.getCurrentUrl());
 		return driver.getCurrentUrl().contains(this.getUrl());
 	}
 	

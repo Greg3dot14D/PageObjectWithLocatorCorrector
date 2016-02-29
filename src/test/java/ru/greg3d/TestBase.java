@@ -8,11 +8,12 @@ import org.testng.ITestResult;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Listeners;
+import org.testng.annotations.Parameters;
 
 import ru.greg3d.applogic.implementations.*;
 import ru.greg3d.applogic.interfaces.*;
 
-import com.microsoft.sqlserver.jdbc.*;
+//import com.microsoft.sqlserver.jdbc.*;
 
 @Listeners({TestBase.LogListener.class})
 public class TestBase {
@@ -23,8 +24,14 @@ public class TestBase {
 
 	//@BeforeSuite
 	@BeforeTest
+	//@Parameters({"capabilities"})
+	//public void SuiteSetup(String capabilities) {
 	public void SuiteSetup() {
-		app = new ApplicationManager1();
+		app = new ApplicationManager1("JIAYU G4S");
+		//app = new ApplicationManager1("remoteAndroid");
+		//app = new ApplicationManager1("firefox");
+		//app = new ApplicationManager1("chrome");
+		//app = new ApplicationManager1(capabilities);
 	}
 	
 	//@AfterSuite(alwaysRun = true)
@@ -38,7 +45,20 @@ public class TestBase {
 		@Override
 		public void afterInvocation(IInvokedMethod m, ITestResult res) {
 //			LOG.info("<<< @Test " + m.getTestMethod().getMethodName());
-			LOG.info("<<< @Test [{}] delay: {} ms",m.getTestMethod().getMethodName(),(m.getTestResult().getEndMillis() - m.getTestResult().getStartMillis()));			
+			
+			String logResult = String.format("<<< @Test [%2s] delay: %2d ms",m.getTestMethod().getMethodName(),(m.getTestResult().getEndMillis() - m.getTestResult().getStartMillis()));
+			
+			switch(m.getTestResult().getStatus()){
+			case 2:
+				LOG.error(logResult + " <<< failed");
+				break;
+			case 3:
+				LOG.warn(logResult + " <<< skipped");
+				break;
+			default:
+				LOG.info(logResult + " <<< passed");
+				break;
+			}
 		}
 
 		@Override

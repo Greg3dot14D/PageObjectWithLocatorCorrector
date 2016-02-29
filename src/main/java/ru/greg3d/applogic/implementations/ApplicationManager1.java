@@ -19,12 +19,16 @@ public class ApplicationManager1 implements ApplicationManager {
 	private WebDriver driver;
 	private String baseUrl;
 
-	public ApplicationManager1() {
+	public ApplicationManager1(){
+		this(null);
+	}
+	
+	public ApplicationManager1(String capabilitiesName) {
 		this.baseUrl = PropertyLoader.loadProperty("site.url");
-//		driver = new TracingWebDriver(BrowserDriver.getEventFiringWebDriver(BrowserDriver.newDriver()))
-//				.getWrappedDriver();
-		driver = new TracingWebDriver(BrowserDriver.getEventFiringWebDriver(BrowserDriver.newDriver()));
-//		driver = new TracingWebDriver(BrowserDriver.newDriver());
+		//driver = new TracingWebDriver(BrowserDriver.getEventFiringWebDriver(BrowserDriver.newDriver("JIAYU G4S")))
+		//		.getWrappedDriver();
+		//driver = new TracingWebDriver(BrowserDriver.getEventFiringWebDriver(BrowserDriver.newDriver("firefox")));		
+		driver = new TracingWebDriver(BrowserDriver.getEventFiringWebDriver(BrowserDriver.newDriver(capabilitiesName)));
 		userHelper = new UserHelper1(this);
 		filmHelper = new FilmHelper1(this);
 		navHelper = new NavigationHelper1(this);

@@ -25,7 +25,7 @@ public class WebEventListener extends AbstractWebDriverEventListener {
 	private static Logger LOG = LoggerFactory.getLogger(WebEventListener.class);
 	
 	public void beforeChangeValueOf(WebElement element, WebDriver driver) {
-		LOG.debug("beforeChangeValueOf: '" + element.toString() + "'" + element.getText());
+		LOG.debug("beforeChangeValueOf: '" + element.toString() + "'" + element.getAttribute("value").toString());
 	}
 	
 	public void afterChangeValueOf(WebElement element, WebDriver driver) {

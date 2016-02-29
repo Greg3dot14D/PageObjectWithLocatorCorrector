@@ -21,8 +21,13 @@ public class BrowserDriver{
 	private static WebDriver _driver;
 	private static Logger LOG = LoggerFactory.getLogger(BrowserDriver.class);
 	
+	
 	public synchronized static WebDriver newDriver() {
-		_driver = BrowserFactory.getBrowser();
+		return BrowserFactory.getBrowser(null);
+    }
+	
+	public synchronized static WebDriver newDriver(String capabilitiesName) {
+		_driver = BrowserFactory.getBrowser(capabilitiesName);
 		return _driver;
     }	
 	

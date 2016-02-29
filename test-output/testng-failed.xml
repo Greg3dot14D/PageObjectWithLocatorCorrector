@@ -12,8 +12,8 @@
         <methods>
           <include name="DoLogin"/>
           <include name="doGotoHome"/>
+          <include name="addValidRecord"/>
           <include name="SuiteSetup"/>
-          <include name="addNotAllNecessaryFieldsRecord" invocation-numbers="0 1"/>
           <include name="tearDown"/>
         </methods>
       </class> <!-- ru.greg3d.Lesson3TestAdd -->

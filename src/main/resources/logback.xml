@@ -7,7 +7,7 @@
       <driverClass>com.microsoft.sqlserver.jdbc.SQLServerDriver</driverClass>
       <url>jdbc:sqlserver://WKS-CST-19\SQLEXPRESS:1441;databaseName=loger</url>
       <user>trim</user>
-      <password>supertrimcreator</password>
+      <password></password>
     </connectionSource>
   </appender>
     

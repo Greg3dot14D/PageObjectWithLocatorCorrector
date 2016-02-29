@@ -123,13 +123,14 @@ public class FilmHelper1 extends DriverBasedHelper implements FilmHelper {
 
 	@Override
 	public boolean filmWasNotAdded() {
-		return pages.addFilmPage.waitPageLoaded();
+		//return pages.addFilmPage.waitPageLoaded();
+		return pages.addFilmPage.pageIsOpen();
 	}
 	
 	@Override
 	public boolean filmWasAdded() {
-		WaitUtils.delay(2000);
-		return pages.moviePage.waitPageLoaded();
+		//return pages.moviePage.waitPageLoaded();
+		return pages.moviePage.pageIsOpen();
 	}
 
 	@Override

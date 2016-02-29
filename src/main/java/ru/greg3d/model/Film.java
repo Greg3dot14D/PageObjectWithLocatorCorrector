@@ -2,13 +2,13 @@ package ru.greg3d.model;
 
 public class Film {
 
-	private String id;
-	private String imdb;
-	private String title;
-	private String year;
-	private String notes;
-	private String duration;
-	private String rating;
+	private String id = "";
+	private String imdb = "";
+	private String title = "";
+	private String year = "";
+	private String notes = "";
+	private String duration = "";
+	private String rating = "";
 	
 	public String getId() {
 		return id;

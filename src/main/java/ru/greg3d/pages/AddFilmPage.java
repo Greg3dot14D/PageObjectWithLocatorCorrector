@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class AddFilmPage extends DefaultPage {
 
-	private final String url = "/?go=add/";
+	private final String url = "/?go=add";
 	
 	@FindBy(name="name")
 	private WebElement titleInput;

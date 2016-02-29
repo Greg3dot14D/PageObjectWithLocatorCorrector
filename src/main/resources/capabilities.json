@@ -1,0 +1,18 @@
+{
+    "JIAYU G4S":{
+		"deviceName" : "",
+		"browserName": "Chrome",
+		"platformName" : "Android",
+		"platformVersion" : "4.2",
+		"automationName" : "Appium"
+	},
+	
+	"firefox":{
+		"browserName": "firefox"
+	},
+	
+	"chrome":{
+		"browserName": "chrome"
+	}
+		
+}

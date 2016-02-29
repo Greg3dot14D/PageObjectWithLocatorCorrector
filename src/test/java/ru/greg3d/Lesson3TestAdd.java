@@ -54,7 +54,7 @@ public class Lesson3TestAdd extends doLogin {
 	// * Проверка добавления записи с незаполненными необходимыми полями
 	// *
 	@Test(dataProvider = "inValidFieldsFilmsDataProvider")
-	public void addNotAllNecessaryFieldsRecord(final Film film) {
+	public void addNotAllNecessaryFieldsRecord(Film film) {
 		//Assert.ignore("test");
 		app.getNavigationHelper().gotoAddNewFilmPage();
 		app.getFilmHelper().create(film);
@@ -70,11 +70,11 @@ public class Lesson3TestAdd extends doLogin {
 	private Object[][] inValidFieldsFilmsDataProvider() {
 		return new Object[][] {
 				{ new Film()
-					.setTitle(null)
+					.setTitle("")
 					.setYear(1950 + new Random().nextInt(65)) },
 				{ new Film()
 					.setTitle("new Title_" + Calendar.getInstance().getTimeInMillis())
-					.setYear(null) }
+					.setYear("") }
 			};
 	};
 
