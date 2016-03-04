@@ -14,6 +14,7 @@ public class CapabilitiesLoader {
     	
 		for(Object name : obj.getJSONObject(capabilitiesName).names()){
     		cap.setCapability(name.toString(), obj.getJSONObject(capabilitiesName).getString(name.toString()));
+    		System.out.println("Cap ->" + name.toString() + "\nValue ->"+ obj.getJSONObject(capabilitiesName).getString(name.toString()));
     	}
 		}catch(org.json.JSONException e){
 			System.out.println(e.getMessage());

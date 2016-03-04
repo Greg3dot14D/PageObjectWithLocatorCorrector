@@ -6,6 +6,8 @@ public interface NavigationHelper {
 
 	void openRelativeUrl(String url);
 
+	void openUrl(String url);
+
 	void gotoUserProfilePage();
 
 	void gotoUserManagementPage();

@@ -6,6 +6,7 @@ import ru.greg3d.applogic.interfaces.ApplicationManager;
 import ru.greg3d.applogic.interfaces.FilmHelper;
 import ru.greg3d.applogic.interfaces.NavigationHelper;
 import ru.greg3d.applogic.interfaces.UserHelper;
+import ru.greg3d.applogic.interfaces.YandexHelper;
 import ru.greg3d.browsers.BrowserDriver;
 import ru.greg3d.browsers.TracingWebDriver;
 import ru.greg3d.util.*;
@@ -15,6 +16,7 @@ public class ApplicationManager1 implements ApplicationManager {
 	private UserHelper userHelper;
 	private FilmHelper filmHelper;
 	private NavigationHelper navHelper;
+	private YandexHelper yandexHelper;
 
 	private WebDriver driver;
 	private String baseUrl;
@@ -32,6 +34,7 @@ public class ApplicationManager1 implements ApplicationManager {
 		userHelper = new UserHelper1(this);
 		filmHelper = new FilmHelper1(this);
 		navHelper = new NavigationHelper1(this);
+		yandexHelper = new YandexHelper1(this);
 
 		getNavigationHelper().openMainPage();
 	}
@@ -51,6 +54,11 @@ public class ApplicationManager1 implements ApplicationManager {
 		return navHelper;
 	}
 
+	@Override
+	public YandexHelper getYandexHelper() {
+		return yandexHelper;
+	}	
+	
 	protected WebDriver getWebDriver() {
 		return driver;
 	}

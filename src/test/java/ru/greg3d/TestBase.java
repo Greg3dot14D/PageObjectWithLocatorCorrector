@@ -23,16 +23,20 @@ public class TestBase {
 	protected static Logger LOG = LoggerFactory.getLogger(TestBase.class);
 
 	//@BeforeSuite
+	//@BeforeTest
+	@Parameters({"capabilities"})
+	public void SuiteSetup(String capabilities) {
+		app = new ApplicationManager1(capabilities);
+	}
+	
 	@BeforeTest
-	//@Parameters({"capabilities"})
-	//public void SuiteSetup(String capabilities) {
 	public void SuiteSetup() {
-		app = new ApplicationManager1("JIAYU G4S");
-		//app = new ApplicationManager1("remoteAndroid");
+		//app = new ApplicationManager1("JIAYU G4S");
+		//app = new ApplicationManager1("android_browser");
+		app = new ApplicationManager1("android_chrome");
 		//app = new ApplicationManager1("firefox");
 		//app = new ApplicationManager1("chrome");
-		//app = new ApplicationManager1(capabilities);
-	}
+	}	
 	
 	//@AfterSuite(alwaysRun = true)
 	@AfterTest(alwaysRun = true)

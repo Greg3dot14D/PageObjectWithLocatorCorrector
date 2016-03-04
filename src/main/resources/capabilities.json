@@ -7,12 +7,29 @@
 		"automationName" : "Appium"
 	},
 	
+	"android_browser":{
+		"browserName": "browser",
+		"deviceName" : "device",
+		"platformName" : "Android",
+		"platformVersion" : "17",
+		"automationName" : "Appium"
+	},
+	
+	"android_chrome":{
+           	"browserName": "chrome",
+			"deviceName" : "device",
+			"platformName" : "ANDROID",
+			"platformVersion" : "17",
+			"automationName" : "Appium"
+	},	
+	
 	"firefox":{
 		"browserName": "firefox"
 	},
 	
 	"chrome":{
-		"browserName": "chrome"
+		  "browserName": "chrome",
+          "platform":"WINDOWS"
 	}
 		
 }

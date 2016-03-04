@@ -15,6 +15,7 @@ public class doLogin extends TestBase{
 		User admin = new User().setLogin("admin").setPassword("admin");
 		app.getUserHelper().loginAs(admin);
 		Assert.assertTrue(app.getUserHelper().isLoggedIn());
+		//Assert.ignore("Stop Test");
 	}
 	
 	@Parameters({"user","password"})

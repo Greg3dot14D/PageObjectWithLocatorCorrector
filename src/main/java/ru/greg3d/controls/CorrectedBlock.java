@@ -6,9 +6,9 @@ import org.openqa.selenium.support.PageFactory;
 import ru.greg3d.factory.fielddecorator.LocatorCorrectorFieldDecorator;
 import ru.greg3d.factory.fielddecorator.model.LocatorCorrector;
 
-public class AnyControl{
+public class CorrectedBlock{
 	
-	public AnyControl(WebDriver driver, LocatorCorrector corrector){
+	public CorrectedBlock(WebDriver driver, LocatorCorrector corrector){
 		PageFactory.initElements(new LocatorCorrectorFieldDecorator(driver, corrector), this);
 	}
 }

@@ -16,6 +16,12 @@ public class NavigationHelper1 extends DriverBasedHelper implements NavigationHe
 		driver.get(baseUrl);
 	}
 
+	
+	@Override
+	public void openUrl(String url){
+		driver.get(url);
+	}
+	
 	@Override
 	public void openRelativeUrl(String url) {
 		driver.get(baseUrl + url);
@@ -45,6 +51,6 @@ public class NavigationHelper1 extends DriverBasedHelper implements NavigationHe
 	public void gotoAddNewFilmPage() {
 		if (!pages.addFilmPage.pageIsOpen())
 			//pages.homePage.imgAddMovieClick();
-			pages.homePage.buttons.ImgAddMovieClick();
+			pages.homePage.buttons.imgAddMovie().click();
 	}
 }

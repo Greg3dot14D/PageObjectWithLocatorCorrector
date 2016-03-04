@@ -11,4 +11,6 @@ public interface ApplicationManager {
 	NavigationHelper getNavigationHelper();
 
 	void stop();
+
+	YandexHelper getYandexHelper();
 }

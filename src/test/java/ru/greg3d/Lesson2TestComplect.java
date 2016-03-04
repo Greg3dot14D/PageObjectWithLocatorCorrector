@@ -216,7 +216,7 @@ public class Lesson2TestComplect extends TestBase {
 		if(driver.findElements(By.cssSelector(".title")).size() != 0)
 			return;
 		LOG.warn("grid is empty, test blocked");
-		Assert.ignore("grid is empty, test blocked");
+		//Assert.ignore("grid is empty, test blocked");
 	}
 	
 	// проверка поиска первой из списка записи

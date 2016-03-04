@@ -14,6 +14,7 @@ public class PageManager {
 	public DefaultPage defaultPage;
 	public AddFilmPage addFilmPage;
 	public MoviePage moviePage;
+	public YandexPage yandexPage;
 
 	public PageManager(WebDriver driver) {
 		this.driver = driver;
@@ -21,6 +22,7 @@ public class PageManager {
 		defaultPage = initElements(new DefaultPage(this));
 		addFilmPage = initElements(new AddFilmPage(this));
 		moviePage = initElements(new MoviePage(this));
+		yandexPage = initElements(new YandexPage(this));
 	}
 
 	private <T extends Page> T initElements(T page) {

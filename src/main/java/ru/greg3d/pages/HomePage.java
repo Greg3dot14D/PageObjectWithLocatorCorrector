@@ -15,6 +15,7 @@ import org.openqa.selenium.support.How;
 
 import ru.greg3d.controls.Buttons;
 import ru.greg3d.controls.HomeButtons;
+import ru.greg3d.factory.elements.TextInput;
 import ru.greg3d.factory.fielddecorator.model.LocatorCorrector;
 import ru.greg3d.util.WaitUtils;
 
@@ -37,7 +38,7 @@ public class HomePage extends DefaultPage {
 	private List<WebElement> filmTitleList;
 
 	@FindBy(id = "q")
-	private WebElement searhInput;
+	private TextInput searhInput;
 
 	// кнопка Добавить фильм
 	//@FindBy(css = "img[title='Add movie']")
@@ -85,7 +86,7 @@ public class HomePage extends DefaultPage {
 	}
 	
 	public HomePage searhInputClear() {
-		if (searhInput.getAttribute("value").toString().equals("Search for movies...")) {
+		if (searhInput.getText().equals("Search for movies...")) {
 			return this;
 		}
 		searhInput.sendKeys(Keys.CONTROL + "a");
@@ -108,8 +109,7 @@ public class HomePage extends DefaultPage {
 	
 	// нажимаем на кнопку Добавить фильм
 	public HomePage imgAddMovieClick(){
-		buttons.ImgAddMovieClick();
-		//imgAddMovie.click();
+		buttons.imgAddMovie().click();;
 		return this;
 	}
 }

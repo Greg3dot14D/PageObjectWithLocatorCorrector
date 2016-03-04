@@ -5,8 +5,14 @@
   <artifactId>PageObjectWithLocatorCorrector</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
-
   <dependencies>
+    <dependency>
+        <groupId>ru.greg3d</groupId>
+        <artifactId>sqljdbc42</artifactId>
+        <version>1.0.0</version>
+        <scope>system</scope>
+        <systemPath>${project.basedir}/lib/sqljdbc42.jar</systemPath>
+    </dependency>
 <dependency>
 	<groupId>org.slf4j</groupId>
 	<artifactId>slf4j-api</artifactId>
@@ -42,6 +48,11 @@
       <artifactId>junit</artifactId>
       <version>4.12</version>
     </dependency>
+	<dependency>
+		<groupId>io.appium</groupId>
+		<artifactId>java-client</artifactId>
+		<version>3.3.0</version>
+	</dependency>
     <dependency>
       <groupId>ru.stqa.selenium</groupId>
       <artifactId>webdriver-factory</artifactId>
@@ -94,13 +105,11 @@
       <id>remote_firefox</id>
       <properties>
         <env>remote_firefox</env>
-        <user.username></user.username>
+        <user.username>root</user.username>
         <user.password></user.password>
-        <grid2.hub>http://192.168.21.2:4444/wd/hub</grid2.hub>
-        <site.url>http://192.168.21.2/php4dvd</site.url>
-        <browser.name>firefox</browser.name>
-        <browser.version></browser.version>
-        <browser.platform></browser.platform>
+        <grid2.hub>http://192.168.1.84:4444/wd/hub</grid2.hub>
+        <site.url>http://192.168.1.84/php4dvd</site.url>
+        <capabilities.json>capabilities.json</capabilities.json>
       </properties>
       <activation>
         <activeByDefault>true</activeByDefault>

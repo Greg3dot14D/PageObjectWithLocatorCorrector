@@ -18,13 +18,11 @@ public class PropertyLoader {
 			e.printStackTrace();
 		}
 
-		String value = null;
+		String value = props.getProperty(name);
+		
+		if(value == null || value.contains("${"))
+			value = "";
 
-		if (name != null) {
-			value = props.getProperty(name);
-			if(value.contains("${"))
-				value = "";
-		}
 		return value;
 	}
 }

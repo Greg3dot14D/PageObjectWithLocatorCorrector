@@ -1,6 +1,8 @@
 package ru.greg3d.controls;
 
+import ru.greg3d.factory.elements.Button;
+
 public interface HomeButtons {
-	void ImgAddMovieClick();
+	Button imgAddMovie();
 	//void ImgFakeMovieClic();
 }
