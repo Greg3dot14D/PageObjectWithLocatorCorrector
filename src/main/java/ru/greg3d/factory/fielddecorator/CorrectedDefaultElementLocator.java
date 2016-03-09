@@ -10,7 +10,7 @@ import org.openqa.selenium.support.pagefactory.ElementLocator;
 
 import ru.greg3d.factory.fielddecorator.model.LocatorCorrector;
 
-public class LocatorCorrectorDefaultElementLocator implements ElementLocator {
+public class CorrectedDefaultElementLocator implements ElementLocator {
 
 	private final SearchContext searchContext;
 	private final boolean shouldCache;
@@ -18,13 +18,13 @@ public class LocatorCorrectorDefaultElementLocator implements ElementLocator {
 	private WebElement cachedElement;
 	private List<WebElement> cachedElementList;
 
-	public LocatorCorrectorDefaultElementLocator(SearchContext searchContext, Field field,
+	public CorrectedDefaultElementLocator(SearchContext searchContext, Field field,
 			LocatorCorrector corrector) {
-		this(searchContext, new LocatorCorrectorAnnotations(field, corrector));
+		this(searchContext, new CorrectedAnnotations(field, corrector));
 	}
 
-	public LocatorCorrectorDefaultElementLocator(SearchContext searchContext,
-			LocatorCorrectorAbstractAnnotations annotations) {
+	public CorrectedDefaultElementLocator(SearchContext searchContext,
+			CorrectedAbstractAnnotations annotations) {
 		this.searchContext = searchContext;
 		this.shouldCache = annotations.isLookupCached();
 		this.by = annotations.buildBy();

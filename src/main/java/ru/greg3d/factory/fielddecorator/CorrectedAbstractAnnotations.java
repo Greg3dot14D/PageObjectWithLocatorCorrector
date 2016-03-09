@@ -11,7 +11,7 @@ import ru.greg3d.factory.fielddecorator.model.LocatorCorrector;
  * {@link org.openqa.selenium.support.FindBys} and
  * {@link org.openqa.selenium.support.FindAll} annotations.
  */
-public abstract class LocatorCorrectorAbstractAnnotations extends AbstractAnnotations {
+public abstract class CorrectedAbstractAnnotations extends AbstractAnnotations {
 	protected LocatorCorrector corrector;
 
 	@Override

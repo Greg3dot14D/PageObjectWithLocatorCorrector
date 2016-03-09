@@ -3,18 +3,7 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test verbose="2" name="Default test">
     <classes>
-      <class name="ru.greg3d.testYandexSearch"/>
+      <class name="ru.greg3d.Lesson3TestAdd"/>
     </classes>
   </test> <!-- Default test -->
-  <test name="Default test(failed)">
-    <classes>
-      <class name="ru.greg3d.testYandexSearch">
-        <methods>
-          <include name="testSearchQWERTY"/>
-          <include name="SuiteSetup"/>
-          <include name="tearDown"/>
-        </methods>
-      </class> <!-- ru.greg3d.testYandexSearch -->
-    </classes>
-  </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

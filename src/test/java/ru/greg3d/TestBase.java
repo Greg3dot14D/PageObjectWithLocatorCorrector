@@ -12,6 +12,7 @@ import org.testng.annotations.Parameters;
 
 import ru.greg3d.applogic.implementations.*;
 import ru.greg3d.applogic.interfaces.*;
+import ru.greg3d.asserts.Assert;
 
 //import com.microsoft.sqlserver.jdbc.*;
 
@@ -33,9 +34,10 @@ public class TestBase {
 	public void SuiteSetup() {
 		//app = new ApplicationManager1("JIAYU G4S");
 		//app = new ApplicationManager1("android_browser");
-		app = new ApplicationManager1("android_chrome");
+		//app = new ApplicationManager1("android_chrome");
 		//app = new ApplicationManager1("firefox");
-		//app = new ApplicationManager1("chrome");
+		app = new ApplicationManager1("chrome");
+		//Assert.ignore("Skip");
 	}	
 	
 	//@AfterSuite(alwaysRun = true)

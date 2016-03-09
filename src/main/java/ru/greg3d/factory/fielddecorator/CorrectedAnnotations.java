@@ -11,7 +11,7 @@ import org.openqa.selenium.support.FindBys;
 
 import ru.greg3d.factory.fielddecorator.model.LocatorCorrector;
 
-public class LocatorCorrectorAnnotations extends LocatorCorrectorAbstractAnnotations {
+public class CorrectedAnnotations extends CorrectedAbstractAnnotations {
 	private Field field;
 
 	/**
@@ -19,7 +19,7 @@ public class LocatorCorrectorAnnotations extends LocatorCorrectorAbstractAnnotat
 	 *            expected to be an element in a Page Object
 	 * @param id
 	 */
-	public LocatorCorrectorAnnotations(Field field, LocatorCorrector corrector) {
+	public CorrectedAnnotations(Field field, LocatorCorrector corrector) {
 		this.field = field;
 		this.corrector = corrector;
 	}

@@ -1,6 +1,7 @@
 package ru.greg3d.applogic.implementations;
 
 import ru.greg3d.applogic.interfaces.NavigationHelper;
+import ru.greg3d.util.WaitUtils;
 
 public class NavigationHelper1 extends DriverBasedHelper implements NavigationHelper {
 

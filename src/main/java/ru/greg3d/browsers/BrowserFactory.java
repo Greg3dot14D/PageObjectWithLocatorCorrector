@@ -1,8 +1,8 @@
 package ru.greg3d.browsers;
 
 import java.awt.Toolkit;
-import java.net.MalformedURLException;
-import java.net.URL;
+//import java.net.MalformedURLException;
+//import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.Dimension;
@@ -15,8 +15,8 @@ import ru.greg3d.util.CapabilitiesLoader;
 import ru.greg3d.util.PropertyLoader;
 import ru.stqa.selenium.factory.WebDriverFactory;
 
-import io.appium.java_client.*;
-import io.appium.java_client.android.AndroidDriver;
+//import io.appium.java_client.*;
+//import io.appium.java_client.android.AndroidDriver;
 
 public class BrowserFactory {
 

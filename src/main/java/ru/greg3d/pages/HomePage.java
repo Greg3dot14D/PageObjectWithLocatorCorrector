@@ -16,6 +16,7 @@ import org.openqa.selenium.support.How;
 import ru.greg3d.controls.Buttons;
 import ru.greg3d.controls.HomeButtons;
 import ru.greg3d.factory.elements.TextInput;
+import ru.greg3d.factory.fielddecorator.model.Corrector;
 import ru.greg3d.factory.fielddecorator.model.LocatorCorrector;
 import ru.greg3d.util.WaitUtils;
 
@@ -46,15 +47,17 @@ public class HomePage extends DefaultPage {
 	//private WebElement imgAddMovie;
 
 	//public Buttons buttons;
-	public HomeButtons buttons;
+	@Corrector(than="Add movie")
+	//@FindBy(css="nav")
+	@FindBy(css="body")
+	//public HomeButtons buttons;
+	public Buttons buttons;
 	
 	@FindBy(id="results")
 	WebElement results;
 	
 	public HomePage(PageManager page) {
 		super(page);
-		corrector.setThan(_THAN_ID);
-		buttons = new Buttons(page.getWebDriver(), corrector);
 	}
 
 

@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
-import ru.greg3d.factory.fielddecorator.LocatorCorrectorFieldDecorator;
+import ru.greg3d.factory.fielddecorator.CorrectedFieldDecorator;
 
 public class PageManager {
 
@@ -31,7 +31,7 @@ public class PageManager {
 		// page);
 		//PageFactory.initElements(new DisplayedElementLocatorFactory(driver, 10), page);
 		//* PageFactory.initElements(new lcFieldDecorator(driver, corrector), this);
-		PageFactory.initElements(new LocatorCorrectorFieldDecorator(driver, page.getLocatorCorrector()), page);
+		PageFactory.initElements(new CorrectedFieldDecorator(driver, page.getLocatorCorrector()), page);
 		return page;
 	}
 
